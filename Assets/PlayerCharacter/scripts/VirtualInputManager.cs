@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace GameProgrammingLanguageTermProject{
 
-    public class VirtualInputManager : MonoBehaviour
+    public class VirtualInputManager : Singleton<VirtualInputManager>
     {
         public static VirtualInputManager Instance = null;
 
