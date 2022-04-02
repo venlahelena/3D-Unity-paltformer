@@ -15,7 +15,11 @@ namespace GameProgrammingLanguageTermProject
         //Variable to control character speed
         public float Speed;
 
-        //Barable for animations
+        //Variable for animations
         public Animator animator;
+
+        //Variables fro movement
+        public bool MoveRight;
+        public bool MoveLeft;
     }
 }
