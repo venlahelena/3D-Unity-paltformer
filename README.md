@@ -6,7 +6,7 @@ Tilemap / platformer kit:
 https://kenney.nl/assets/platformer-kit
 
 3D chiken mesh with animations:
-https://assetstore.unity.com/packages/3d/characters/animals/meshtint-free-chicken-mega-toon-series-151842
+https://www.meshtint.com/collections/free/products/meshtint-free-chicken-mega-toon-series
 
 Stylized sky box:
 https://assetstore.unity.com/packages/2d/textures-materials/sky/free-stylized-skybox-212257
