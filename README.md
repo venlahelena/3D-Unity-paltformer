@@ -1,5 +1,5 @@
 # 3D-Unity-Paltformer
-Term project for Game Prpogramming Languages course done at Hangyang Univertiy ERICA.
+Term project for Game Programming Language course done at Hangyang University ERICA campus.
 
 3D assets:
 Tilemap / platformer kit:
