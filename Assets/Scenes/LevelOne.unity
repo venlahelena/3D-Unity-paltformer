@@ -397,6 +397,7 @@ MonoBehaviour:
   animator: {fileID: 1927307452}
   MoveRight: 0
   MoveLeft: 0
+  Jump: 0
 --- !u!114 &160903422
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1838,16 +1839,16 @@ Transform:
   - {fileID: 580074301}
   - {fileID: 1026672524}
   - {fileID: 814916201}
-  - {fileID: 503514608}
-  - {fileID: 1550629212}
   - {fileID: 255776044}
+  - {fileID: 503514608}
   - {fileID: 1876386619}
   - {fileID: 131789633}
+  - {fileID: 1550629212}
   - {fileID: 165416887}
   - {fileID: 613313483}
+  - {fileID: 192630123}
   - {fileID: 1901826499}
   - {fileID: 446036332}
-  - {fileID: 192630123}
   m_Father: {fileID: 545489686}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -89.815, z: 0}

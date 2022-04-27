@@ -33,6 +33,15 @@ namespace GameProgrammingLanguageTermProject
             {
                 characterControl.MoveLeft = false;
             }
+
+            if(VirtualInputManager.Instance.Jump)
+            {
+                characterControl.Jump = true;
+            }
+            else
+            {
+                characterControl.Jump = false;
+            }
         }
     }
 }
