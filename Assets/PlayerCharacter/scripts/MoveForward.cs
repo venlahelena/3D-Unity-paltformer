@@ -10,8 +10,13 @@ namespace GameProgrammingLanguageTermProject
         {
             public float Speed;
 
-            public override void UpdateAbility(CharacterStateBase characterStateBase, Animator animator)
-            {
+        public override void OnEnter(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
+        {
+
+        }   
+
+        public override void UpdateAbility(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
+        {
                 //Get character control from state base.
                 CharacterControl c = characterStateBase.GetCharacterControl(animator);
 
@@ -42,6 +47,11 @@ namespace GameProgrammingLanguageTermProject
                     c.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
                     c.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
             }
+        }
+
+        public override void OnExit(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
+        {
+
         }
     }
 }

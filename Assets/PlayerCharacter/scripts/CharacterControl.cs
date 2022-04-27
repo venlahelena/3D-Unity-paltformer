@@ -8,6 +8,8 @@ namespace GameProgrammingLanguageTermProject
     public enum TransitionParameter
     {
         Walk,
+        Jump,
+        ForceJumpTransition,
     }
 
     public class CharacterControl : MonoBehaviour
@@ -21,5 +23,6 @@ namespace GameProgrammingLanguageTermProject
         //Variables fro movement
         public bool MoveRight;
         public bool MoveLeft;
+        public bool Jump;
     }
 }
