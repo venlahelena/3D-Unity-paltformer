@@ -8,7 +8,9 @@ namespace GameProgrammingLanguageTermProject
 
         public class MoveForward : StateData
         {
+            public AnimationCurve SpeedGraph;
             public float Speed;
+            public float BlockDistance;
 
         public override void OnEnter(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
         {
@@ -19,6 +21,11 @@ namespace GameProgrammingLanguageTermProject
         {
                 //Get character control from state base.
                 CharacterControl c = characterStateBase.GetCharacterControl(animator);
+
+                if(c.Jump)
+                {
+                    animator.SetBool(TransitionParameter.Jump.ToString(), true);
+                }
 
                 //If we press A and D key at the same time character should not react
                 if (c.MoveRight && c.MoveLeft)
@@ -38,20 +45,42 @@ namespace GameProgrammingLanguageTermProject
                 //when player press D key character moves Right/forwards
                 if (c.MoveRight)
                 {
-                    c.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-                    c.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    if(!CheckFront(c))
+                    {
+                        c.transform.Translate(Vector3.forward * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
+                        c.transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+                    }
+                    
                 }
+
                 //When player presses A key character moves left/backwards
                 if (c.MoveLeft)
                 {
-                    c.transform.Translate(Vector3.forward * Speed * Time.deltaTime);
-                    c.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
-            }
+                    if (!CheckFront(c))
+                    {
+                        c.transform.Translate(Vector3.forward * Speed * SpeedGraph.Evaluate(stateInfo.normalizedTime) * Time.deltaTime);
+                        c.transform.rotation = Quaternion.Euler(0f, 180f, 0f);
+                    }
+                }
         }
 
         public override void OnExit(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
         {
 
+        }
+
+        bool CheckFront(CharacterControl c)
+        {
+            foreach (GameObject o in c.FrontSpheres)
+            {
+                RaycastHit hit;
+                if (Physics.Raycast(o.transform.position, c.transform.forward, out hit, BlockDistance))
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }
