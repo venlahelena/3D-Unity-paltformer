@@ -10,13 +10,14 @@ namespace GameProgrammingLanguageTermProject
     {
         public override void OnEnter(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
         {
-
+            animator.SetBool(TransitionParameter.Jump.ToString(), false);
         }
 
         public override void UpdateAbility(CharacterStateBase characterStateBase, Animator animator, AnimatorStateInfo stateInfo)
         {
             CharacterControl c = characterStateBase.GetCharacterControl(animator);
 
+            //When player presses spacebar jump turn into true and character jumps
             if (c.Jump)
             {
                 animator.SetBool(TransitionParameter.Jump.ToString(), true);
