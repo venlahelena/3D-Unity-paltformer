@@ -1,30 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DragObjects : MonoBehaviour
 {
-    private Vector3 mOffset;
+    public GameObject targetObject;
 
-    private float mZCoord;
+    Vector3 targetObjectNextPosition;
 
-    void OnMouseDown()
+    float targetObjectHeight;
+
+    RaycastHit hit;
+  
+    void Start()
     {
-        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
-        mOffset = gameObject.transform.position - GetMouseWorldPos();
+        targetObjectNextPosition = targetObject.transform.position;
+        targetObjectHeight = targetObject.GetComponent<MeshRenderer>().bounds.size.y;
     }
 
-    private Vector3 GetMouseWorldPos()
+    void Update()
     {
-        Vector3 mousePoint = Input.mousePosition;
+        if(Input.GetMouseButtonUp(0))
+        {
+            Vector3 worldMousePosition = Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 100f));
 
-        mousePoint.z = mZCoord;
+            Vector3 direction = worldMousePosition - Camera.main.transform.position;
 
-        return Camera.main.ScreenToWorldPoint(mousePoint);
+            if(Physics.Raycast(Camera.main.transform.position, direction, out hit, 100f))
+            {
+                Debug.DrawLine(Camera.main.transform.position, hit.point, Color.green, 0.5f);
+
+                if (hit.collider.gameObject.name == "Plane")
+                {
+                    targetObjectNextPosition = hit.point + new Vector3(0f, targetObjectHeight / 2, 0f);
+
+                    targetObject.transform.position = targetObjectNextPosition;
+                }
+
+            } else
+            {
+                Debug.DrawLine(Camera.main.transform.position, worldMousePosition, Color.red, 0.5f);
+            }
+        }
     }
-
-    void OnMouseDrag()
-    {
-        transform.position = GetMouseWorldPos() + mOffset;
-    }
+ 
 }

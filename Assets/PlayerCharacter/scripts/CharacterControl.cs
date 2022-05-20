@@ -28,17 +28,18 @@ namespace GameProgrammingLanguageTermProject
         public List<GameObject> BottomSpheres = new List<GameObject>();
         public List<GameObject> FrontSpheres = new List<GameObject>();
 
-        private Rigidbody rigidbody;
+        private Rigidbody rgdbody;
+
         public Rigidbody RIGID_BODY
         {
             get
             {
-                if(rigidbody == null)
+                if(rgdbody == null)
                 {
-                    rigidbody = GetComponent<Rigidbody>();
+                    rgdbody = GetComponent<Rigidbody>();
                 }
 
-                return rigidbody;
+                return rgdbody;
             }
         }
 
