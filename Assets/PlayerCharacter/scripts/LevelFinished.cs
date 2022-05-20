@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelFinished : MonoBehaviour
 {
@@ -15,12 +16,12 @@ public class LevelFinished : MonoBehaviour
     {
         if(collision.gameObject.name == "Player")
         {
-            CompleteLevel();
+            Invoke("CompleteLevel", 1f);
         }
     }
 
     private void CompleteLevel()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
