@@ -3,8 +3,8 @@ Term project for Game Programming Language course done at Hangyang University ER
 
 Game shortly:
 Players task is to move through the level collecting items (food) for the chicks. Only way to pass the level is to collect all the needed food items. 
-Each level is a puzzle. Some of the game objects needs to be moved around so that player can reach and collect all the needed items and finally reach the chicks.
-Player can only move in x axis.
+Unity 3D / 2.5D game. Each level is a puzzle. Some of the game objects needs to be moved around so that player can reach and collect all the needed items and finally reach the chicks.
+Player can only move in y axis.
 
 Each level is timed.
 
