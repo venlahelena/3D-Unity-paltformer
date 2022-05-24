@@ -7,6 +7,8 @@ TagManager:
   - Apple
   - Mushroom
   - Death
+  - Block
+  - BlockLeft
   layers:
   - Default
   - TransparentFX
