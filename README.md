@@ -31,3 +31,9 @@ https://www.meshtint.com/collections/free/products/meshtint-free-chick-mega-toon
 
 Stylized sky box:
 https://assetstore.unity.com/packages/2d/textures-materials/sky/free-stylized-skybox-212257
+
+Food item props:
+https://assetstore.unity.com/packages/3d/props/food/3d-props-adorable-foods-31249#description
+
+Sounds:
+https://assetstore.unity.com/packages/audio/music/casual-puzzle-world-sounds-free-package-123537#description
