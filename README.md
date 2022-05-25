@@ -38,3 +38,6 @@ https://assetstore.unity.com/packages/3d/props/food/3d-props-adorable-foods-3124
 Sounds:
 https://assetstore.unity.com/packages/audio/music/casual-puzzle-world-sounds-free-package-123537#description
 https://assetstore.unity.com/packages/audio/sound-fx/free-casual-pack-sfx-197054
+
+UI Elements:
+https://assetstore.unity.com/packages/2d/gui/icons/2d-casual-ui-hd-82080#description
