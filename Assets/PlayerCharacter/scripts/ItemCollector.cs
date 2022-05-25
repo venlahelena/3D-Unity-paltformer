@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ItemCollector : MonoBehaviour
 {
+
     private int apples = 0;
     private int mushrooms = 0;
 
@@ -14,6 +15,7 @@ public class ItemCollector : MonoBehaviour
 
     public GameObject enterText;
     public GameObject enterTextNotComp;
+
     public string levelToLoad;
 
     [SerializeField] private Text applesText;
@@ -44,10 +46,14 @@ public class ItemCollector : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Finish"))
         {
+
             if (apples == applesToCollect && mushrooms == mushroomsToCollect)
             {
-                Invoke("OnTriggerEnter", 2.0f);
                 enterText.SetActive(true);
+
+                Invoke("OnTriggerEnter", 1.0f);
+                
+                
                 SceneManager.LoadScene(levelToLoad);
             }
             else

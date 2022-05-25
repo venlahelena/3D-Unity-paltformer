@@ -44,7 +44,7 @@ public class MoveObjects : MonoBehaviour
                         foreach (var target in targets)
                         {
 
-                            Vector3 moveDirection = new Vector3(0.4f, 0.0f, 0.0f);
+                            Vector3 moveDirection = new Vector3(0.5f, 0.0f, 0.0f);
 
                             target.transform.position += moveDirection;
 
